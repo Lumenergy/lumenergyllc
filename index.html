@@ -50,8 +50,28 @@
     }
 
     .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6);}
-    .nav a{ opacity:0.9; margin-left:1rem; }
-    .nav a:hover{ opacity:1; }
+    .nav a{
+  font-family: 'Raleway', sans-serif;  /* match the brand font */
+  font-weight: 300;
+  letter-spacing: .5px;
+  color: var(--pearl);
+  opacity: .9;
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: color .2s ease, text-shadow .25s ease, opacity .2s ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible{
+  color: var(--glow); /* same color as the brand glow */
+  opacity: 1;
+  text-shadow:
+    0 0 10px rgba(255,250,210,0.9),
+    0 0 30px rgba(255,250,210,0.55),
+    0 0 60px rgba(255,250,210,0.35);
+  outline: none; /* keep the glow as the focus indicator */
+}
+
 
 /* Hero */
   .hero {
