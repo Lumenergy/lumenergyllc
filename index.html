@@ -8,8 +8,7 @@
   <meta name="description" content="Lumenergy LLC — consulting, research, and strategy for climate and energy policy in California." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -23,15 +22,18 @@
     }
     * { box-sizing:border-box; }
     html, body { height:100%; }
-    body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--pearl); background: var(--deep);
+   body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: var(--pearl);
+      background: var(--deep);
       background-image: url('gradient.png');
       background-size: cover;
       background-attachment: fixed;
-      background-position:center;
-      line-height:1.6;
-    }
+      background-position: center;
+      line-height: 1.6;
+   }
+  
     a{ color:var(--pearl); text-decoration:none; }
     .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
 
@@ -97,6 +99,13 @@
         0 0 30px rgba(255,250,210,0.55),
         0 0 60px rgba(255,250,210,0.35);
     }
+    h1.glow-text,
+    h2.glow-text {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;         /* bold */
+      letter-spacing: 1px;      /* optional: adds breathing room */
+    }
+
     .tag{ display:inline-block; padding:.2rem .6rem; font-size:.85rem; border:1px solid rgba(255,250,210,.3); border-radius:999px; background:rgba(255,255,255,0.06);}
     .cta{ display:inline-block; margin-top:1.5rem; padding:.9rem 1.2rem; border-radius:14px; font-weight:600; letter-spacing:.2px; background:linear-gradient(135deg, var(--gold), #ffe585); color:#3a2a00; box-shadow:0 5px 20px rgba(250,204,21,.35);}
     .cta:hover{ transform:translateY(-1px); box-shadow:0 10px 28px rgba(250,204,21,.45);}
