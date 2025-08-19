@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumenergy — Illuminate your energy advocacy</title>
+  <meta name="description" content="Lumenergy LLC — consulting, research, and strategy for climate and energy policy in California." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --deep:#2D1B4E;
+      --violet:#6D28D9;
+      --lav:#C084FC;
+      --gold:#FACC15;
+      --pearl:#F9FAFB;
+      --graphite:#111827;
+      --glow:#FFFAD2;
+    }
+    * { box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--pearl); background: var(--deep);
+      background-image: url('gradient.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position:center;
+      line-height:1.6;
+    }
+    a{ color:var(--pearl); text-decoration:none; }
+    .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
+
+    /* Nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(6px) saturate(140%);
+      background: linear-gradient(180deg, rgba(45,27,78,0.6), rgba(45,27,78,0.3));
+      border-bottom:1px solid rgba(250,252,255,0.08);
+    }
+    .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
+    .brand{ font-weight:800; letter-spacing:0.5px; }
+    .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6);}
+    .nav a{ opacity:0.9; margin-left:1rem; }
+    .nav a:hover{ opacity:1; }
+
+    /* Hero */
+    .hero{ padding:8rem 0 5rem; text-align:center; }
+    .glow-text{
+      color:var(--glow);
+      text-shadow:
+        0 0 10px rgba(255,250,210,0.9),
+        0 0 30px rgba(255,250,210,0.55),
+        0 0 60px rgba(255,250,210,0.35);
+    }
+    .tag{ display:inline-block; padding:.2rem .6rem; font-size:.85rem; border:1px solid rgba(255,250,210,.3); border-radius:999px; background:rgba(255,255,255,0.06);}
+    .cta{ display:inline-block; margin-top:1.5rem; padding:.9rem 1.2rem; border-radius:14px; font-weight:600; letter-spacing:.2px; background:linear-gradient(135deg, var(--gold), #ffe585); color:#3a2a00; box-shadow:0 5px 20px rgba(250,204,21,.35);}
+    .cta:hover{ transform:translateY(-1px); box-shadow:0 10px 28px rgba(250,204,21,.45);}
+
+    /* Sections */
+    section{ padding:4rem 0; }
+    h2{ font-size:2rem; margin:0 0 1rem; }
+    .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
+    
+    /* Cards */
+    .grid{ display:grid; gap:1.2rem; }
+    @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
+    .card{
+      position:relative;
+      background: rgba(17, 10, 32, .55);
+      border:1px solid rgba(192,132,252,.25);
+      border-radius:18px; padding:1.2rem;
+      transition:.25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow:
+        0 0 10px rgba(250,204,21,.35),
+        0 0 30px rgba(250,204,21,.25),
+        0 0 60px rgba(250,204,21,.15);
+    }
+    .card h3{ margin:.2rem 0 .6rem; }
+    .muted{ color: #e8defa; opacity:.9; }
+    .list{ margin:0; padding-left:1.1rem; }
+    .list li{ margin:.3rem 0; }
+
+    /* About block */
+    .about{ background: linear-gradient(180deg, rgba(109,40,217,.15), rgba(192,132,252,.08)); border:1px solid rgba(192,132,252,.28); border-radius:18px; padding:1.5rem; }
+
+    /* Contact */
+    .contact a.btn{
+      display:inline-block; padding:.8rem 1.1rem; border-radius:12px; border:1px solid rgba(192,132,252,.4);
+      background:rgba(192,132,252,.12); color:var(--pearl);
+    }
+    .contact a.btn:hover{
+      border-color: rgba(250,204,21,.6);
+      background: rgba(250,204,21,.12);
+      box-shadow: 0 0 18px rgba(250,204,21,.35);
+    }
+
+    footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08);}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand glow-text">Lum<span class="star">●</span>energy</div>
+      <div style="margin-left:auto">
+        <a href="#services">Services</a>
+        <a href="#work">Areas of Interest</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <div class="tag">Independent • California • Energy & Climate</div>
+    <h1 class="glow-text" style="font-size: clamp(2rem, 6vw, 3.2rem); margin:.6rem 0 1rem;">Illuminate your energy advocacy. Founded in 2025, Lumenergy LLC offers independent support for nonprofits and non-governmental organizations focused on climate and energy policy and advocacy in California. Connect</h1>
+    <p class="section-intro">Founded in 2025, Lumenergy provides consulting, research, and advocacy support focused on climate and energy policy in California.</p>
+    <a class="cta" href="#contact">Get in touch</a>
+  </header>
+
+  <main>
+    <section id="services" class="container">
+      <h2 class="glow-text">Services</h2>
+      <p class="section-intro">Navigate complex grid and energy subjects with clear, actionable deliverables.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Consulting & Education</h3>
+          <p class="muted">Technology, policy, physics, environmental impacts, and more.</p>
+        </div>
+        <div class="card">
+          <h3>Research & Strategy</h3>
+          <p class="muted">Objective analysis, writing, briefings, advocacy strategies, and tailored research.</p>
+        </div>
+        <div class="card">
+          <h3>Organizational Development</h3>
+          <p class="muted">Grant writing, workplans, metrics, project tracking, design, and web/social support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="container">
+      <h2 class="glow-text">Areas of Interest</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Transmission & Interconnections</h3>
+          <ul class="list">
+            <li>Streamlining permitting and siting.</li>
+            <li>Grid-enhancing technologies and advanced conductors.</li>
+            <li>Regulatory reform and stakeholder engagement.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Clean Energy Resources</h3>
+          <ul class="list">
+            <li>Solar, wind, geothermal.</li>
+            <li>Battery energy storage & long‑duration storage.</li>
+            <li>Green hydrogen and emerging technologies.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Community Engagement</h3>
+          <p class="muted">Ensuring a just transition that reflects needs of impacted communities.</p>
+        </div>
+        <div class="card">
+          <h3>Energy Affordability</h3>
+          <p class="muted">Reducing burdens on ratepayers and taxpayers from flawed policy and IOU models.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h2 class="glow-text">About</h2>
+      <div class="about">
+        <p>Lumenergy LLC is a single‑member consultancy owned and operated in California. Services can be scoped to fit your needs and delivered on an hourly, project, or retainer basis.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2 class="glow-text">Contact</h2>
+      <p>Email for questions and consultations. Please no solicitations.</p>
+      <p><a class="btn" href="mailto:hello@lumenergy.example">Email</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div>&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
