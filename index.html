@@ -96,18 +96,25 @@
     .list li{ margin:.3rem 0; }
 
     /* About block */
-    .about{ background: linear-gradient(180deg, rgba(109,40,217,.15), rgba(192,132,252,.08)); border:1px solid rgba(192,132,252,.28); border-radius:18px; padding:1.5rem; }
+   <div class="about card">
+      <p>...</p>
+   </div>
+
 
     /* Contact */
-    .contact a.btn{
-      display:inline-block; padding:.8rem 1.1rem; border-radius:12px; border:1px solid rgba(192,132,252,.4);
-      background:rgba(192,132,252,.12); color:var(--pearl);
+    .contact a.btn {
+      border: 1px solid rgba(192,132,252,.25);
+      background: rgba(17, 10, 32, .55);  /* dark purple box */
+      color: var(--pearl);
+      border-radius: 12px;
+      padding: .8rem 1.1rem;
+      transition: .2s ease;
     }
-    .contact a.btn:hover{
+    .contact a.btn:hover {
       border-color: rgba(250,204,21,.6);
-      background: rgba(250,204,21,.12);
       box-shadow: 0 0 18px rgba(250,204,21,.35);
     }
+
 
     footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08);}
   </style>
@@ -190,7 +197,7 @@
     <section id="contact" class="container contact">
       <h2 class="glow-text">Contact</h2>
       <p>Email for questions and consultations. Please no solicitations.</p>
-      <p><a class="btn" href="mailto:hello@lumenergy.example">Email</a></p>
+      <p><a class="btn" href="mailto:lumenergyllc@outlook.com">Email</a></p>
     </section>
   </main>
 
