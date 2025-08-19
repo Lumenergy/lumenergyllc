@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --deep:#2D1B4E;
@@ -40,7 +42,12 @@
       border-bottom:1px solid rgba(250,252,255,0.08);
     }
     .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
-    .brand{ font-weight:800; letter-spacing:0.5px; }
+    .brand {
+      font-family: 'Raleway', sans-serif; /* only affects the logo word */
+      font-weight: 300;                   /* sleek thin look */
+      letter-spacing: 1px;                /* optional, makes it breathe */
+    }
+
     .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6);}
     .nav a{ opacity:0.9; margin-left:1rem; }
     .nav a:hover{ opacity:1; }
