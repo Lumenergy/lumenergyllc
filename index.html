@@ -81,24 +81,32 @@
     text-align: center;       /* centers inline text + buttons */
   }
 
+  .hero-title {
+    font-size: 2rem;       /* same as h2 section titles */
+    margin: .6rem 0 1rem;
+  }
+
   .hero .section-intro {
     margin-left: auto;
     margin-right: auto;       /* keeps intro paragraph centered */
   }
-.hero-logo {
-  display: block;
-  margin: 0 auto 2rem;      /* centers the logo, adds spacing below */
-  max-width: 300px;         /* adjust this number to your preference */
-  width: 100%;              /* make it responsive */
-  height: auto;             /* keep proportions */
-}
-    .glow-text{
-      color:var(--glow);
-      text-shadow:
-        0 0 10px rgba(255,250,210,0.9),
-        0 0 30px rgba(255,250,210,0.55),
-        0 0 60px rgba(255,250,210,0.35);
+    
+  .hero-logo {
+    display: block;
+    margin: 0 auto 2rem;      /* centers the logo, adds spacing below */
+    max-width: 360px;         /* adjust this number to your preference */
+    width: 100%;              /* make it responsive */
+    height: auto;             /* keep proportions */
+  }
+    
+  .glow-text{
+    color:var(--glow);
+    text-shadow:
+      0 0 10px rgba(255,250,210,0.9),
+      0 0 30px rgba(255,250,210,0.55),
+      0 0 60px rgba(255,250,210,0.35);
     }
+    
     h1.glow-text,
     h2.glow-text {
       font-family: 'Oswald', sans-serif;
@@ -209,7 +217,7 @@
 
   <header class="hero container">
     <img src="logo1.png" alt="Lumenergy Logo" class="hero-logo">
-    <h1 class="glow-text" style="font-size: clamp(1rem, 3vw, 1.5rem); margin:.6rem 0 1rem;">Illuminate Your Energy Advocacy</h1>
+    <h1 class="glow-text hero-title">Illuminate Your Energy Advocacy</h1>
     <p class="section-intro">Founded in 2025, Lumenergy LLC offers independent support for nonprofits and non-governmental organizations focused on climate and energy policy and advocacy in California.</p>
     <a class="cta" href="#contact">Get in touch</a>
   </header>
