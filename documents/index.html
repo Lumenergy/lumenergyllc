@@ -74,7 +74,12 @@
     .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
 
     /* Cards (same aesthetic as your site) */
-    .grid{ display:grid; gap:1.2rem; }
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem; /* space before footer */
+    }
+
     @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
     @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
     .card{
