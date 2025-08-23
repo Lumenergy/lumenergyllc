@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Lumenergy LLC</title>
-  <meta name="description" content="About Lumenergy LLC and founder Maia Leroy." />
+  <title>What We Do | Lumenergy LLC</title>
+  <meta name="description" content="Services and areas of interest offered by Lumenergy LLC." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -58,7 +58,6 @@
       text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
       outline:none;
     }
-    /* Glow the current page link (used by the auto-glow script) */
     .nav a[aria-current="page"]{
       color: var(--glow);
       opacity: 1;
@@ -81,26 +80,16 @@
       color: var(--glow);
       text-shadow: 0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
     }
-.section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
+/* Section headings */
+.section-title{
+  text-align: left;
+  margin: 0 0 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
 
-    /* Section heading style (Raleway, left-aligned) */
-    .section-title{
-      font-family:'Raleway', sans-serif;
-      font-weight:600;
-      text-align:left;
-      margin:0 0 1.2rem;
-    }
-    .section-title.center{
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto 1.2rem;
-    }
-    .section-subtitle{
-      text-align: center;
-      max-width: 900px;
-      margin: 0.3rem auto 1.8rem;
-      line-height: 1.65;
-    }
+
+  
 
     /* Cards (match homepage) */
     .grid {
@@ -109,6 +98,7 @@
       margin-bottom: 2.5rem; /* space before footer */
     }
     @media (min-width: 900px){
+      .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
       .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
     }
     .card{
@@ -134,23 +124,6 @@
       color: #e8defa;
       opacity: .9;
     }
-    .list{ margin:0; padding-left:1.1rem; }
-    .list li{ margin:.3rem 0; }
-
-    /* Founder card layout */
-    .founder{
-      display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start;
-    }
-    .headshot{
-      width: 120px; height: 120px; border-radius: 14px; object-fit: cover;
-      border: 1px solid rgba(255,255,255,.1);
-      box-shadow: 0 4px 18px rgba(0,0,0,.25);
-      background: rgba(0,0,0,.15);
-    }
-    @media (max-width: 540px){
-      .founder{ grid-template-columns: 1fr; }
-      .headshot{ width: 100%; height: auto; }
-    }
 
     /* Footer + socials */
     footer{
@@ -170,49 +143,69 @@
 <body>
 
   <!-- Nav -->
-  <nav class="nav" role="navigation" aria-label="Primary">
-    <div class="container nav-inner">
-      <a class="brand glow-text" href="/" title="Go to homepage">Lumenergy LLC</a>
-      <div class="nav-links">
-        <a href="/What%20We%20Do/">What We Do</a>
-        <a href="/role/">Our Role</a>
-        <a href="/materials/">Materials</a>
-        <a href="/About/">About</a>
-        <a href="/#contact">Contact</a>
-      </div>
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand glow-text" href="/" title="Go to homepage">Lumenergy LLC</a>
+    <div class="nav-links">
+      <a href="/what-we-do/">What We Do</a>
+      <a href="/our-role/">Our Role</a>
+      <a href="/materials/">Materials</a>
+      <a href="/about/">About</a>
+      <a href="/contact">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <header class="page-header container">
     <img src="/logo1.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:160px;width:100%;height:auto;">
-    <h1 class="glow-text" style="margin:.6rem 0 1rem;">About</h1>
-    <p class="section-intro">Information about Lumenergy LLC.</p>
+    <h1 class="glow-text" style="margin:.6rem 0 1rem;">What We Do</h1>
   </header>
 
   <main class="container">
-    <h2 class="glow-text section-title center">Our Mission</h2>
-    <p class="muted section-subtitle">
-      Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.
-    </p>
 
-    <section class="grid cols-2" aria-label="About cards">
-      <article class="card">
-        <h3>About Lumenergy</h3>
-        <p class="muted">
-          Lumenergy LLC is a single-member consultancy owned and operated by Maia Leroy. Maia has over three years of experience in shaping climate and energy policy in California and an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions. Work is scoped to your team’s needs and capacity and can be conducted on an hourly, project, or retainer basis.
-        </p>
-      </article>
+<!-- Services (REPLACE this whole block) -->
+<section id="services" aria-label="Services">
+  <h2 class="glow-text section-title">Services</h2>
+  <div class="grid cols-3">
+    <article class="card">
+      <h3>Consulting &amp; Education</h3>
+      <p class="muted">Navigate complex grid and energy subjects, including technology, policy, physics, environmental impacts, and more.</p>
+    </article>
+    <article class="card">
+      <h3>Research &amp; Strategy</h3>
+      <p class="muted">Get comprehensive information gathering, objective analysis, writing capacity, campaign strategies, and other research or advocacy needs addressed.</p>
+    </article>
+    <article class="card">
+      <h3>Organizational Development</h3>
+      <p class="muted">Develop grant proposals, workplans, success metrics, project tracking tools, graphic design, social media and web development.</p>
+    </article>
+  </div>
+</section>
 
-      <article class="card">
-        <h3>About the Founder</h3>
-        <div class="founder">
-          <img src="/headshot.png" alt="Portrait of Maia Leroy" class="headshot">
-          <p class="muted">
-            As former Center for Energy Efficiency and Renewable Technologies’ Policy Director, Maia has over three years of experience in shaping climate and energy policy in California, as well as an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions. Now, Maia utilizes her policy skills, scientific nature, and abundant connections to bring additional capacity to organizations like yours.
-          </p>
-        </div>
-      </article>
-    </section>
+<!-- Areas of Interest (REPLACE this whole block) -->
+<section id="work" aria-label="Areas of Interest">
+  <h2 class="glow-text section-title">Areas of Interest</h2>
+  <div class="grid cols-2">
+    <article class="card">
+      <h3>Planning and Permitting</h3>
+      <p class="muted">Transmission and procurement planning, regulatory permitting, project development, and SB 100 compliance.</p>
+    </article>
+    <article class="card">
+      <h3>Renewable Energy and Storage Technologies</h3>
+      <p class="muted">Solar, wind, geothermal, battery energy storage systems, long-duration energy storage, and green hydrogen.</p>
+    </article>
+    <article class="card">
+      <h3>Community Engagement</h3>
+      <p class="muted">Ensuring a just transition that reflects the needs and concerns of those directly impacted by project development.</p>
+    </article>
+    <article class="card">
+      <h3>Energy Affordability</h3>
+      <p class="muted">Reducing burdens placed on ratepayers and taxpayers from flawed policy and expensive investor-owned utility models.</p>
+    </article>
+  </div>
+</section>
+
+
   </main>
 
   <footer class="container">
@@ -239,18 +232,20 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Auto-glow: set aria-current="page" based on the current URL
-    (function () {
-      function norm(p){ return p.replace(/\/index\.html$/,'').replace(/\/+$/,'/'); }
-      var current = norm(location.pathname);
-      document.querySelectorAll('.nav-links a[href]').forEach(function(a){
-        try {
-          var p = norm(new URL(a.getAttribute('href'), location.origin).pathname);
-          if (p === current) a.setAttribute('aria-current','page');
-        } catch(e) {}
-      });
-    })();
   </script>
+
+<script>
+(function() {
+  var current = location.pathname.replace(/\/index\.html$/,'').toLowerCase();
+  document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+    try {
+      var p = new URL(a.getAttribute('href'), location.origin)
+                .pathname.replace(/\/index\.html$/,'').toLowerCase();
+      if (p === current) a.setAttribute('aria-current','page');
+    } catch (e) {}
+  });
+})();
+</script>
+
 </body>
 </html>
