@@ -10,8 +10,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -59,6 +58,7 @@
       text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
       outline:none;
     }
+    /* Glow the current page link (used by the auto-glow script) */
     .nav a[aria-current="page"]{
       color: var(--glow);
       opacity: 1;
@@ -81,27 +81,25 @@
       color: var(--glow);
       text-shadow: 0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
     }
-/* Section heading style (Raleway, left-aligned) */
-.section-title{
-  font-family:'Raleway', sans-serif;
-  font-weight:600;
-  text-align:left;
-  margin:0 0 1.2rem;
-}
 
-.section-title.center{
-  text-align: center;
-  /* optional: keep readable width */
-  max-width: 900px;
-  margin: 0 auto 1.2rem;
-}
-
-.section-subtitle{
-  text-align: center;
-  max-width: 900px;
-  margin: 0.3rem auto 1.8rem; /* a touch of space below the H2 */
-  line-height: 1.65;
-}
+    /* Section heading style (Raleway, left-aligned) */
+    .section-title{
+      font-family:'Raleway', sans-serif;
+      font-weight:600;
+      text-align:left;
+      margin:0 0 1.2rem;
+    }
+    .section-title.center{
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 1.2rem;
+    }
+    .section-subtitle{
+      text-align: center;
+      max-width: 900px;
+      margin: 0.3rem auto 1.8rem;
+      line-height: 1.65;
+    }
 
     /* Cards (match homepage) */
     .grid {
@@ -111,7 +109,6 @@
     }
     @media (min-width: 900px){
       .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
-
     }
     .card{
       position: relative;
@@ -172,13 +169,14 @@
 <body>
 
   <!-- Nav -->
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Primary">
     <div class="container nav-inner">
-      <a class="brand glow-text" href="https://lumenergyllc.com/" title="Go to homepage">Lumenergy LLC</a>
+      <a class="brand glow-text" href="/" title="Go to homepage">Lumenergy LLC</a>
       <div class="nav-links">
-        <a href="/#services">Services</a>
-        <a href="/#work">Areas of Interest</a>
-        <a href="/about/" aria-current="page">About</a>
+        <a href="/About/">About</a>
+        <a href="/What%20We%20Do/">What We Do</a>
+        <a href="/role/">Our Role</a>
+        <a href="/materials/">Materials</a>
         <a href="/#contact">Contact</a>
       </div>
     </div>
@@ -189,17 +187,13 @@
     <h1 class="glow-text" style="margin:.6rem 0 1rem;">About</h1>
   </header>
 
-<main class="container">
-<h2 class="glow-text section-title center">
-  Our Mission
-</h2>
-<p class="muted section-subtitle">
-  Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.
-</p>
+  <main class="container">
+    <h2 class="glow-text section-title center">Our Mission</h2>
+    <p class="muted section-subtitle">
+      Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.
+    </p>
 
     <section class="grid cols-2" aria-label="About cards">
-
-      <!-- Card 1 -->
       <article class="card">
         <h3>About Lumenergy</h3>
         <p class="muted">
@@ -207,7 +201,6 @@
         </p>
       </article>
 
-      <!-- Card 2 -->
       <article class="card">
         <h3>About the Founder</h3>
         <div class="founder">
@@ -217,7 +210,6 @@
           </p>
         </div>
       </article>
-
     </section>
   </main>
 
@@ -245,6 +237,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Auto-glow: set aria-current="page" based on the current URL
+    (function () {
+      function norm(p){ return p.replace(/\/index\.html$/,'').replace(/\/+$/,'/'); }
+      var current = norm(location.pathname);
+      document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+        try {
+          var p = norm(new URL(a.getAttribute('href'), location.origin).pathname);
+          if (p === current) a.setAttribute('aria-current','page');
+        } catch(e) {}
+      });
+    })();
   </script>
 </body>
 </html>
