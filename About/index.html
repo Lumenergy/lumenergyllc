@@ -56,6 +56,15 @@
       text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
       outline:none;
     }
+    /* highlight the current page link */
+    .nav a[aria-current="page"]{
+      color: var(--glow);
+      opacity: 1;
+      text-shadow:
+        0 0 10px rgba(255,250,210,.9),
+        0 0 30px rgba(255,250,210,.55),
+        0 0 60px rgba(255,250,210,.35);
+    }
     .nav-links{ margin-left:auto; display:flex; align-items:center; }
     @media (max-width: 640px){
       .nav-inner{ flex-wrap:wrap; gap:.25rem; }
@@ -70,7 +79,7 @@
       text-shadow:0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
     }
 
-    /* --- Cards --- */
+    /* --- Cards (match homepage) --- */
     .grid {
       display: grid;
       gap: 1.2rem;
@@ -94,73 +103,4 @@
         0 0 30px rgba(250,204,21,.25),
         0 0 60px rgba(250,204,21,.15);
     }
-    .card h3{ margin:.2rem 0 .6rem; }
-    .muted {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      color: #e8defa;
-      opacity: .9;
-    }
-    .list{ margin:0; padding-left:1.1rem; }
-    .list li{ margin:.3rem 0; }
-
-    /* Founder card layout */
-    .founder{
-      display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:start;
-    }
-    .headshot{
-      width:120px; height:120px; border-radius:14px; object-fit:cover;
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow: 0 4px 18px rgba(0,0,0,.25);
-      background: rgba(0,0,0,.15);
-    }
-    @media (max-width: 540px){
-      .founder{ grid-template-columns: 1fr; }
-      .headshot{ width:100%; height:auto; }
-    }
-
-    /* Footer + socials */
-    footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08); }
-    .socials { display:flex; gap:14px; justify-content:center; margin:12px 0 18px; }
-    .social-link img{ width:28px; height:28px; display:block; opacity:.85; transition:transform .15s ease, opacity .15s ease; object-fit:contain; }
-    .social-link:hover img,.social-link:focus img{ transform:translateY(-2px); opacity:1; }
-  </style>
-</head>
-<body>
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="container nav-inner">
-    <div class="brand glow-text">Lumenergy LLC</div>
-    <div class="nav-links">
-      <a href="/#services">Services</a>
-      <a href="/#work">Areas of Interest</a>
-      <a href="/about/" aria-current="page">About</a>
-      <a href="/#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-
-  <header class="page-header container">
-    <img src="/logo1.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:160px;width:100%;height:auto;">
-    <h1 class="glow-text" style="margin:.6rem 0 1rem;">About</h1>
-  </header>
-
-  <main class="container">
-    <section class="grid cols-2" aria-label="About cards">
-
-      <!-- Card 1: SAME TEXT + style as your homepage "About" content -->
-      <article class="card">
-        <h3>About Lumenergy</h3>
-        <p class="muted">
-          Lumenergy LLC is a single-member consultancy owned and operated by Maia Leroy. Maia has over three years of experience in shaping climate and energy policy in California and an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions. Work is scoped to your team’s needs and capacity and can be conducted on an hourly, project, or retainer basis.
-        </p>
-      </article>
-
-      <!-- Card 2: About the Founder -->
-      <article class="card">
-        <h3>About the Founder</h3>
-        <div class="founder">
-          <img src="/headshot.png" alt="Portrait of Maia Leroy" class="headshot">
-          <p class="muted">
-            As former Center for Energy Efficiency and Renewable Technologies’ Policy Director, Maia has over three years of experience in shaping climate and energy policy in California, as well as an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission
+    .card h3{ m
