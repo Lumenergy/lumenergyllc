@@ -80,6 +80,12 @@
       color: var(--glow);
       text-shadow: 0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
     }
+    .section-title{
+      text-align:center;
+      margin: .25rem 0 1rem;
+      font-family: 'Oswald', sans-serif; /* matches site headings */
+      font-weight: 600;
+    }
 
     /* Cards (match homepage) */
     .grid {
@@ -152,39 +158,45 @@
   <main class="container">
 
     <!-- Services -->
-    <section class="grid cols-3" id="services" aria-label="Services">
-      <article class="card">
-        <h3>Consulting &amp; Education</h3>
-        <p class="muted">Navigate complex grid and energy subjects, including technology, policy, physics, environmental impacts, and more.</p>
-      </article>
-      <article class="card">
-        <h3>Research &amp; Strategy</h3>
-        <p class="muted">Get comprehensive information gathering, objective analysis, writing capacity, campaign strategies, and other research or advocacy needs addressed.</p>
-      </article>
-      <article class="card">
-        <h3>Organizational Development</h3>
-        <p class="muted">Develop grant proposals, workplans, success metrics, project management, data and reporting tools, graphic design, social media and web development.</p>
-      </article>
+    <section id="services" aria-label="Services">
+      <h2 class="glow-text section-title">Services</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Consulting &amp; Education</h3>
+          <p class="muted">Navigate complex grid and energy subjects, including technology, policy, physics, environmental impacts, and more.</p>
+        </article>
+        <article class="card">
+          <h3>Research &amp; Strategy</h3>
+          <p class="muted">Get comprehensive information gathering, objective analysis, writing capacity, campaign strategies, and other research or advocacy needs addressed.</p>
+        </article>
+        <article class="card">
+          <h3>Organizational Development</h3>
+          <p class="muted">Develop grant proposals, workplans, success metrics, project management, data and reporting tools, graphic design, social media and web development.</p>
+        </article>
+      </div>
     </section>
 
     <!-- Areas of Interest -->
-    <section class="grid cols-2" id="work" aria-label="Areas of Interest">
-      <article class="card">
-        <h3>Planning and Permitting</h3>
-        <p class="muted">Transmission and procurement planning, regulatory permitting, project development, and SB 100 compliance.</p>
-      </article>
-      <article class="card">
-        <h3>Renewable Energy and Storage Technologies</h3>
-        <p class="muted">Solar, wind, geothermal, battery energy storage systems, long-duration energy storage, and green hydrogen.</p>
-      </article>
-      <article class="card">
-        <h3>Community Engagement</h3>
-        <p class="muted">Ensuring a just transition that reflects the needs and concerns of those directly impacted by project development.</p>
-      </article>
-      <article class="card">
-        <h3>Energy Affordability</h3>
-        <p class="muted">Reducing burdens placed on ratepayers and taxpayers from flawed policy and expensive IOU models.</p>
-      </article>
+    <section id="work" aria-label="Areas of Interest">
+      <h2 class="glow-text section-title">Areas of Interest</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Planning and Permitting</h3>
+          <p class="muted">Transmission and procurement planning, regulatory permitting, project development, and SB 100 compliance.</p>
+        </article>
+        <article class="card">
+          <h3>Renewable Energy and Storage Technologies</h3>
+          <p class="muted">Solar, wind, geothermal, battery energy storage systems, long-duration energy storage, and green hydrogen.</p>
+        </article>
+        <article class="card">
+          <h3>Community Engagement</h3>
+          <p class="muted">Ensuring a just transition that reflects the needs and concerns of those directly impacted by project development.</p>
+        </article>
+        <article class="card">
+          <h3>Energy Affordability</h3>
+          <p class="muted">Reducing burdens placed on ratepayers and taxpayers from flawed policy and expensive IOU models.</p>
+        </article>
+      </div>
     </section>
 
   </main>
@@ -216,4 +228,3 @@
   </script>
 </body>
 </html>
-
