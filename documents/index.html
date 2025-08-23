@@ -4,13 +4,12 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Documents | Lumenergy LLC</title>
+  <title>Materials | Lumenergy LLC</title>
   <meta name="description" content="Downloadable materials and curated references from Lumenergy LLC." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Keep the same core styles & variables as your home page -->
   <style>
     :root{
       --deep:#2D1B4E;
@@ -37,7 +36,7 @@
     a{ color:var(--pearl); text-decoration:none; }
     .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
 
-    /* Nav (copied to match your site) */
+    /* Nav (match your site) */
     .nav{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(6px) saturate(140%);
@@ -73,13 +72,12 @@
     }
     .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
 
-    /* Cards (same aesthetic as your site) */
+    /* Cards */
     .grid {
       display: grid;
       gap: 1.2rem;
       margin-bottom: 2.5rem; /* space before footer */
     }
-
     @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
     @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
     .card{
@@ -98,11 +96,9 @@
     .card h3{ margin:.2rem 0 .6rem; }
     .muted { font-weight:400; color:#e8defa; opacity:.9; }
 
-    /* Simple footer + socials block */
+    /* Footer + socials */
     footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08); }
-    .socials {
-      display:flex; gap:14px; justify-content:center; margin:12px 0 18px;
-    }
+    .socials { display:flex; gap:14px; justify-content:center; margin:12px 0 18px; }
     .social-link img{
       width:28px; height:28px; display:block; opacity:.85;
       transition:transform .15s ease, opacity .15s ease; object-fit:contain;
@@ -111,7 +107,7 @@
   </style>
 </head>
 <body>
-  <!-- Nav matches your home page links + adds Documents -->
+  <!-- Nav -->
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand glow-text">Lumenergy LLC</div>
@@ -119,26 +115,27 @@
         <a href="/#services">Services</a>
         <a href="/#work">Areas of Interest</a>
         <a href="/#about">About</a>
-        <a href="/#contact">Contact</a> 
+        <a href="/#contact">Contact</a>
       </div>
     </div>
   </nav>
 
   <header class="page-header container">
     <img src="/logo1.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:180px;width:100%;height:auto;">
-    <h1 class="glow-text" style="margin:.6rem 0 1rem;">Documents</h1>
+    <h1 class="glow-text" style="margin:.6rem 0 1rem;">Materials</h1>
     <p class="section-intro">Downloadable materials, one-pagers, and curated references. New items will be added regularly.</p>
   </header>
 
   <main class="container">
     <!-- Replace these placeholder cards as you add real files/links -->
-    <section class="grid cols-2" aria-label="Document list">
+    <section class="grid cols-2" aria-label="Materials list">
       <article class="card">
         <h3>Example Fact Sheet</h3>
         <p class="muted">PDF • Updated: Aug 2025</p>
         <p class="muted" style="margin:.4rem 0 1rem;">Brief summary of what this contains and who it’s for.</p>
         <p>
-          <a class="cta" href="/documents/pdfs/example-fact-sheet.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <!-- If you keep the folder named /documents/, change this back to /documents/... -->
+          <a class="cta" href="/materials/pdfs/example-fact-sheet.pdf" target="_blank" rel="noopener">Open PDF</a>
         </p>
       </article>
 
@@ -155,7 +152,6 @@
 
   <footer class="container">
     <p class="footer-note">Like this website? Let me build one for your next campaign!</p>
-
     <nav class="socials" aria-label="Social media">
       <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <img src="/assets/icons/linkedin.png" alt="LinkedIn" width="28" height="28">
