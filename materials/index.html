@@ -56,6 +56,17 @@
       text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
       outline:none;
     }
+
+/* Glow the current page link */
+.nav a[aria-current="page"]{
+  color: var(--glow);
+  opacity: 1;
+  text-shadow:
+    0 0 10px rgba(255,250,210,.9),
+    0 0 30px rgba(255,250,210,.55),
+    0 0 60px rgba(255,250,210,.35);
+}
+    
     .nav-links{ margin-left:auto; display:flex; align-items:center; }
     @media (max-width: 640px){
       .nav-inner{ flex-wrap:wrap; gap:.25rem; }
@@ -107,18 +118,20 @@
   </style>
 </head>
 <body>
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand glow-text">Lumenergy LLC</div>
-      <div class="nav-links">
-        <a href="/#services">Services</a>
-        <a href="/#work">Areas of Interest</a>
-        <a href="/#about">About</a>
-        <a href="/#contact">Contact</a>
-      </div>
+  
+<!-- Nav -->
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand glow-text" href="/" title="Go to homepage">Lumenergy LLC</a>
+    <div class="nav-links">
+      <a href="/About/">About</a>
+      <a href="/What%20We%20Do/">What We Do</a>
+      <a href="/role/">Our Role</a>
+      <a href="/materials/">Materials</a>
+      <a href="/#contact">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <header class="page-header container">
     <img src="/logo1.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:180px;width:100%;height:auto;">
@@ -126,7 +139,6 @@
     <p class="section-intro">Below are materials worked on by Maia Leroy. Not all materials may belong to Lumenergy LLC.</p>
   </header>
 
-  
   <main class="container">
     
 <!-- add files and links here -->
@@ -180,5 +192,19 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+  (function() {
+    var current = location.pathname.replace(/\/index\.html$/,'');
+    document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+      try {
+        var u = new URL(a.getAttribute('href'), location.origin);
+        var p = u.pathname.replace(/\/index\.html$/,'');
+        if (p === current) a.setAttribute('aria-current','page');
+      } catch (e) {}
+    });
+  })();
+</script>
+
 </body>
 </html>
