@@ -69,38 +69,36 @@
       color:var(--glow);
       text-shadow:0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
     }
-    .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
 
-/* Cards */
-.grid{ display:grid; gap:1.2rem; }
-@media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
-@media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
-.card{
-  position:relative;
-  background: rgba(17, 10, 32, .55);
-  border:1px solid rgba(192,132,252,.25);
-  border-radius:18px; padding:1.2rem;
-  transition:.25s ease;
-  box-shadow: 0 0 0 rgba(250,204,21,0);
-}
-.card:hover{
-  transform:translateY(-2px);
-  border-color: rgba(250,204,21,.45);
-  box-shadow:
-    0 0 10px rgba(250,204,21,.35),
-    0 0 30px rgba(250,204,21,.25),
-    0 0 60px rgba(250,204,21,.15);
-}
-.card h3{ margin:.2rem 0 .6rem; }
-.muted {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  color: #e8defa;
-  opacity: .9;
-}
-.list{ margin:0; padding-left:1.1rem; }
-.list li{ margin:.3rem 0; }
-
+    /* --- Cards (exactly the same as homepage) --- */
+    .grid{ display:grid; gap:1.2rem; }
+    @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
+    .card{
+      position:relative;
+      background: rgba(17, 10, 32, .55);
+      border:1px solid rgba(192,132,252,.25);
+      border-radius:18px; padding:1.2rem;
+      transition:.25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow:
+        0 0 10px rgba(250,204,21,.35),
+        0 0 30px rgba(250,204,21,.25),
+        0 0 60px rgba(250,204,21,.15);
+    }
+    .card h3{ margin:.2rem 0 .6rem; }
+    .muted {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      color: #e8defa;
+      opacity: .9;
+    }
+    .list{ margin:0; padding-left:1.1rem; }
+    .list li{ margin:.3rem 0; }
 
     /* Founder card layout */
     .founder{
@@ -149,7 +147,7 @@
       <article class="card">
         <h3>About Lumenergy</h3>
         <p class="muted">
-          Lumenergy LLC is a single‑member consultancy owned and operated by Maia Leroy. Maia has over three years of experience in shaping climate and energy policy in California and an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions. Work is scoped to your team’s needs and capacity and can be conducted on an hourly, project, or retainer basis.
+          Lumenergy LLC is a single-member consultancy owned and operated by Maia Leroy. Maia has over three years of experience in shaping climate and energy policy in California and an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions. Work is scoped to your team’s needs and capacity and can be conducted on an hourly, project, or retainer basis.
         </p>
       </article>
 
@@ -159,37 +157,4 @@
         <div class="founder">
           <img src="/headshot.png" alt="Portrait of Maia Leroy" class="headshot">
           <p class="muted">
-            As former Center for Energy Efficiency and Renewable Technologies’ Policy Director, Maia has over three years of experience in shaping climate and energy policy in California, as well as an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions. Now, Maia utilizes her policy skills, scientific nature, and abundant connections to bring additional capacity to organizations like yours.
-          </p>
-        </div>
-      </article>
-
-    </section>
-  </main>
-
-  <footer class="container">
-    <p class="footer-note">Like this website? Let me build one for your next campaign!</p>
-    <nav class="socials" aria-label="Social media">
-      <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <img src="/assets/icons/linkedin.png" alt="LinkedIn" width="28" height="28">
-      </a>
-      <a class="social-link" href="https://x.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
-        <img src="/assets/icons/x.svg" alt="X" width="28" height="28">
-      </a>
-      <a class="social-link" href="https://bsky.app/profile/lumenergyllc.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
-        <img src="/assets/icons/bluesky.svg" alt="Bluesky" width="28" height="28">
-      </a>
-      <a class="social-link" href="https://instagram.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <img src="/assets/icons/instagram.svg" alt="Instagram" width="28" height="28">
-      </a>
-      <a class="social-link" href="https://tiktok.com/@lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <img src="/assets/icons/tiktok.svg" alt="TikTok" width="28" height="28">
-      </a>
-    </nav>
-    <div>&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
-
+            As former Center for Energy Efficiency and Renewable Technologies’ Policy Director, Maia has over three years of experience in shaping climate and energy policy in California, as well as an academic background in physics with six years of laboratory and analytical experience. She combines critical thinking and compassionate advocacy to push towards a cleaner, more equitable energy future. She has authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission
