@@ -10,7 +10,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+ 
 
   <style>
     :root{
@@ -80,6 +80,13 @@
       color: var(--glow);
       text-shadow: 0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
     }
+/* Section heading style (Raleway, left-aligned) */
+.section-title{
+  font-family:'Raleway', sans-serif;
+  font-weight:600;
+  text-align:left;
+  margin:0 0 1.2rem;
+}
 
     /* Cards (match homepage) */
     .grid {
@@ -89,7 +96,7 @@
     }
     @media (min-width: 900px){
       .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
-      .span-2 { grid-column: 1 / -1; } /* full-width card on wide screens */
+
     }
     .card{
       position: relative;
@@ -167,14 +174,12 @@
     <h1 class="glow-text" style="margin:.6rem 0 1rem;">About</h1>
   </header>
 
-  <main class="container">
-    <section class="grid cols-2" aria-label="About cards">
+<main class="container">
+<h2 class="glow-text section-title">
+  Our Mission: Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.
+</h2>
 
-      <!-- NEW full-width card -->
-      <article class="card span-2">
-        <h3>Our Mission</h3>
-        <p class="muted">Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.</p>
-      </article>
+    <section class="grid cols-2" aria-label="About cards">
 
       <!-- Card 1 -->
       <article class="card">
