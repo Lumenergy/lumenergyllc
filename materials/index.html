@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materials | Lumenergy LLC</title>
+  <meta name="description" content="Downloadable materials and other resources." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep:#2D1B4E;
+      --violet:#6D28D9;
+      --lav:#C084FC;
+      --gold:#FACC15;
+      --pearl:#F9FAFB;
+      --graphite:#111827;
+      --glow:#FFFAD2;
+    }
+    * { box-sizing:border-box; }
+    html, body { height:100%; }
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: var(--pearl);
+      background: var(--deep);
+      background-image: url('/gradient.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      line-height: 1.6;
+    }
+    a{ color:var(--pearl); text-decoration:none; }
+    .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
+
+    /* Nav (match your site) */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(6px) saturate(140%);
+      background: linear-gradient(180deg, rgba(45,27,78,0.6), rgba(45,27,78,0.3));
+      border-bottom:1px solid rgba(250,252,255,0.08);
+    }
+    .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
+    .brand { font-family:'Raleway',sans-serif; font-weight:300; letter-spacing:1px; }
+    .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6);}
+    .nav a{
+      font-family:'Raleway',sans-serif; font-weight:300; letter-spacing:.5px;
+      color:var(--pearl); opacity:.9; margin-left:1rem; text-decoration:none;
+      transition: color .2s ease, text-shadow .25s ease, opacity .2s ease;
+    }
+    .nav a:hover,.nav a:focus-visible{
+      color:var(--glow); opacity:1;
+      text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
+      outline:none;
+    }
+
+/* Glow the current page link */
+.nav a[aria-current="page"]{
+  color: var(--glow);
+  opacity: 1;
+  text-shadow:
+    0 0 10px rgba(255,250,210,.9),
+    0 0 30px rgba(255,250,210,.55),
+    0 0 60px rgba(255,250,210,.35);
+}
+    
+    .nav-links{ margin-left:auto; display:flex; align-items:center; }
+    @media (max-width: 640px){
+      .nav-inner{ flex-wrap:wrap; gap:.25rem; }
+      .brand{ flex:1 0 100%; text-align:center; }
+      .nav-links{ width:100%; justify-content:center; margin-left:0; gap:.5rem; }
+      .nav a{ font-size:.9rem; letter-spacing:.3px; margin-left:0; padding:.25rem .4rem; }
+    }
+
+    /* Page header */
+    header.page-header { padding: 4rem 0 2rem; text-align:center; }
+    .glow-text{
+      color:var(--glow);
+      text-shadow:0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
+    }
+    .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem; /* space before footer */
+    }
+    @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
+    .card{
+      position:relative;
+      background: rgba(17, 10, 32, .55);
+      border:1px solid rgba(192,132,252,.25);
+      border-radius:18px; padding:1.2rem;
+      transition:.25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow: 0 0 10px rgba(250,204,21,.35), 0 0 30px rgba(250,204,21,.25), 0 0 60px rgba(250,204,21,.15);
+    }
+    .card h3{ margin:.2rem 0 .6rem; }
+    .muted { font-weight:400; color:#e8defa; opacity:.9; }
+
+    /* Footer + socials */
+    footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08); }
+    .socials { display:flex; gap:14px; justify-content:center; margin:12px 0 18px; }
+    .social-link img{
+      width:28px; height:28px; display:block; opacity:.85;
+      transition:transform .15s ease, opacity .15s ease; object-fit:contain;
+    }
+    .social-link:hover img,.social-link:focus img{ transform:translateY(-2px); opacity:1; }
+  </style>
+</head>
+<body>
+  
+<!-- Nav -->
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand glow-text" href="/" title="Go to homepage">Lumenergy LLC</a>
+    <div class="nav-links">
+      <a href="/What%20We%20Do/">What We Do</a>
+      <a href="/role/">Our Role</a>
+      <a href="/materials/">Materials</a>
+      <a href="/About/">About</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+  <header class="page-header container">
+    <img src="/logo1.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:180px;width:100%;height:auto;">
+    <h1 class="glow-text" style="margin:.6rem 0 1rem;">Materials</h1>
+    <p class="section-intro">Below are materials worked on by Maia Leroy. Not all materials may belong to Lumenergy LLC.</p>
+  </header>
+
+  <main class="container">
+    
+<!-- add files and links here -->
+    
+    <section class="grid cols-2" aria-label="Materials list">
+      <article class="card">
+        <h3>Report: "A Better Deal for Californians: The Rise of Battery Storage Over Gas Generation"</h3>
+        <p class="muted">CEERT &amp; Regenerate California • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">While working under CEERT, Maia partnered with Regenerate California as a co-author to showcase how battery storage systems are making California's grid more affordable and reliable.</p>
+        <p>
+        <a class="cta"
+           href="./pdfs/A%20Better%20Deal%20for%20Californians%20Report.pdf"
+           target="_blank" rel="noopener noreferrer" type="application/pdf">
+          Open PDF
+        </a>
+
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>"Environmentalists urge California to boost batteries, cut gas for grid reliability"</h3>
+        <p class="muted">Garrett Hering, S&amp;P Global • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">S&amp;P Global interviews Maia and other authors of "A Better Deal for Californians" about the rapid buildout of battery storage and how it can enable gas plant retirements.</p>
+        <p>
+          <a class="cta" href="https://www.spglobal.com/commodity-insights/en/news-research/latest-news/electric-power/062025-environmentalists-urge-california-to-boost-batteries-cut-gas-for-grid-reliability" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p class="footer-note">Like this website? Let me build one for your next campaign!</p>
+    <nav class="socials" aria-label="Social media">
+      <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="/assets/icons/linkedin.png" alt="LinkedIn" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://x.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+        <img src="/assets/icons/x.svg" alt="X" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://bsky.app/profile/lumenergyllc.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <img src="/assets/icons/bluesky.svg" alt="Bluesky" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://instagram.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="/assets/icons/instagram.svg" alt="Instagram" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://tiktok.com/@lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <img src="/assets/icons/tiktok.svg" alt="TikTok" width="28" height="28">
+      </a>
+    </nav>
+    <div>&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+  (function() {
+    var current = location.pathname.replace(/\/index\.html$/,'');
+    document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+      try {
+        var u = new URL(a.getAttribute('href'), location.origin);
+        var p = u.pathname.replace(/\/index\.html$/,'');
+        if (p === current) a.setAttribute('aria-current','page');
+      } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
