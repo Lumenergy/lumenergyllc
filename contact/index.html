@@ -110,7 +110,20 @@
         0 0 60px rgba(250,204,21,.15);
     }
 
-    /* --- Contact form styles --- */
+/* --- Contact form styles --- */
+   
+    .form-field input,
+    .form-field textarea{
+    font-family: 'Raleway', sans-serif;
+    }
+
+.form-field input::placeholder,
+.form-field textarea::placeholder{
+  font-family: 'Raleway', sans-serif;
+  color:#c9b7ea;
+  opacity:.65;
+}
+
     .form-card { max-width: 700px; margin: 0 auto; }
     .form-grid { display: grid; gap: 1rem; }
     @media (min-width: 600px){ .form-grid.two { grid-template-columns: 1fr 1fr; } }
