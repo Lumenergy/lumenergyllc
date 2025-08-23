@@ -116,8 +116,16 @@
     @media (min-width: 600px){ .form-grid.two { grid-template-columns: 1fr 1fr; } }
 
     .form-field label{
-      display:block; margin:0 0 .35rem; font-weight:600;
+      display:block;
+      margin:.45rem 0 .35rem; /* add tiny space above each label */
+      font-weight:600;
     }
+
+/* don't add extra top gap on the very first row of the 2-column grid */
+.form-grid.two .form-field:nth-child(-n+2) label{
+  margin-top:0;
+}
+
     .form-field input,
     .form-field textarea{
       width:100%;
