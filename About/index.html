@@ -87,8 +87,10 @@
       gap: 1.2rem;
       margin-bottom: 2.5rem; /* space before footer */
     }
-    @media (min-width: 900px){ .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 900px){ .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px){
+      .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .span-2 { grid-column: 1 / -1; } /* full-width card on wide screens */
+    }
     .card{
       position: relative;
       background: rgba(17, 10, 32, .55);
@@ -150,7 +152,6 @@
   <!-- Nav -->
   <nav class="nav">
     <div class="container nav-inner">
-      <!-- Brand links to homepage (absolute URL so it works even in file previews) -->
       <a class="brand glow-text" href="https://lumenergyllc.com/" title="Go to homepage">Lumenergy LLC</a>
       <div class="nav-links">
         <a href="/#services">Services</a>
@@ -168,6 +169,13 @@
 
   <main class="container">
     <section class="grid cols-2" aria-label="About cards">
+
+      <!-- NEW full-width card -->
+      <article class="card span-2">
+        <h3>Our Mission</h3>
+        <p class="muted">Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.</p>
+      </article>
+
       <!-- Card 1 -->
       <article class="card">
         <h3>About Lumenergy</h3>
@@ -186,6 +194,7 @@
           </p>
         </div>
       </article>
+
     </section>
   </main>
 
@@ -212,7 +221,6 @@
   </footer>
 
   <script>
-    // Year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
