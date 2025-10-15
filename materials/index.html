@@ -26,11 +26,10 @@
       margin: 0;
       font-family: 'Raleway', sans-serif;
       color: var(--pearl);
-      background: var(--deep);
-      background-image: url('/gradientbg.png');
-      background-size: cover;
+      background: linear-gradient(90deg, #0E1745 0%, #4523B2 45%, #8A2FFF 100%),
+            radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 70%);
       background-attachment: fixed;
-      background-position: center;
+      background-size: cover;
       line-height: 1.6;
     }
     a{ color:var(--pearl); text-decoration:none; }
@@ -224,7 +223,7 @@
   
   <footer class="container">
     
-    <p class="footer-note" style="text-align:center;margin:0.5rem 0 0.75rem;color:rgba(17,10,32,.55);">
+    <p class="footer-note" style="text-align:center;margin:0.5rem 0 0.75rem;color:black;">
       Like this website? Let me build one for your next campaign!
       </p>
     
@@ -246,7 +245,7 @@
       </a>
     </nav>
 
-    <div>&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+    <div style="color:black;">&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
