@@ -139,6 +139,71 @@
       text-align: center;
       margin: 0.5rem 0 0.75rem;
   </style>
+
+  <!-- Preload first audio for snappier start -->
+  <link rel="preload" as="audio" href="/materials/mp3/KNXNews2025.mp3" type="audio/mpeg">
+
+  <!-- Audio card CSS (additive; does not modify existing rules) -->
+  <style>
+    .audio-card .audio-player{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:.9rem;
+      padding:.75rem .9rem;
+      background:rgba(17,10,32,.35);
+      border:1px solid rgba(192,132,252,.28);
+      border-radius:14px;
+    }
+    .audio-card .play-btn{
+      width:46px;height:46px;border-radius:9999px;cursor:pointer;
+      display:grid;place-items:center;
+      background: radial-gradient(120% 120% at 30% 20%, rgba(250,204,21,.35), rgba(109,40,217,.35));
+      border:1px solid rgba(250,204,21,.45);
+      box-shadow:0 0 10px rgba(250,204,21,.35), 0 0 24px rgba(192,132,252,.25);
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+      color:var(--graphite);
+    }
+    .audio-card .play-btn:hover,
+    .audio-card .play-btn:focus-visible{
+      transform:translateY(-1px);
+      border-color:rgba(250,204,21,.7);
+      box-shadow:0 0 14px rgba(250,204,21,.45),0 0 36px rgba(192,132,252,.35);
+      outline:none;
+    }
+    .audio-card .play-btn svg{width:22px;height:22px;fill:var(--glow);filter:drop-shadow(0 0 6px rgba(255,250,210,.6));}
+
+    .audio-card .timeline{
+      position:relative;height:10px;border-radius:999px;
+      background:linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.08));
+      border:1px solid rgba(192,132,252,.25);
+      overflow:hidden;cursor:pointer;
+    }
+    .audio-card .progress{
+      position:absolute;inset:0 auto 0 0;width:0%;
+      background:linear-gradient(90deg, var(--gold), #ffeaa7);
+      box-shadow:0 0 10px rgba(250,204,21,.5), 0 0 25px rgba(250,204,21,.35);
+    }
+    .audio-card .thumb{
+      position:absolute;top:50%;left:0%;transform:translate(-50%,-50%);
+      width:14px;height:14px;border-radius:50%;
+      background:var(--glow);border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 0 8px rgba(255,250,210,.8);
+      pointer-events:none;
+    }
+    .audio-card .time{
+      font-variant-numeric:tabular-nums;
+      opacity:.9;min-width:96px;text-align:right;
+    }
+    .audio-card .title-row{
+      display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin:.25rem 0 .6rem;
+    }
+    .audio-card .title-row .muted{opacity:.85}
+    @media (max-width:480px){
+      .audio-card .audio-player{grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:.6rem}
+      .audio-card .time{grid-column:2/3;justify-self:end}
+    }
+  </style>
 </head>
 <body>
   
@@ -167,6 +232,42 @@
 <!-- add files and links here -->
     
     <section class="grid cols-2" aria-label="Materials list">
+
+    <!-- Reuse down to article card for more audio clips -->
+    <article class="card audio-card" data-src="/materials/mp3/KNXNews2025.mp3">
+        <div class="title-row">
+        <h3>Audio: How Battery Storage Has Improved California's Grid Reliability</h3>
+        <span class="muted">MP3 • KNXNews2025.mp3</span>
+        </div>
+
+    <p class="muted">KNX News • October 2025</p>
+    <p class="muted" style="margin:.4rem 0 1rem;">California hasn't needed a FLEX Alert since 2022, in large part thanks to new battery storage facilities.</p>
+
+    <div class="audio-player" data-audio>
+      <button class="play-btn" type="button" aria-label="Play" aria-pressed="false" data-play>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+
+    <div class="timeline" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" tabindex="0" data-timeline>
+      <div class="progress" data-progress></div>
+      <div class="thumb" data-thumb></div>
+    </div>
+
+    <div class="time">
+      <span data-current>0:00</span> / <span data-total>--:--</span>
+    </div>
+  </div>
+
+  <p>
+    <a class="cta" href="/materials/mp3/KNXNews2025.mp3" target="_blank" rel="noopener noreferrer" type="audio/mpeg">Open Audio</a>
+  </p>
+
+  <noscript>
+    <audio controls preload="none" src="/materials/mp3/KNXNews2025.mp3" style="width:100%;margin-top:.6rem"></audio>
+  </noscript>
+</article>
+
+
       
       <article class="card">
         <h3>Article: "California made it through another summer without a Flex Alert. Thank batteries, experts say"</h3>
@@ -278,7 +379,102 @@
       } catch (e) {}
     });
   })();
-</script>
+  </script>
+
+  <!-- Reusable audio player script (auto-wires every .audio-card; supports multiple clips) -->
+  <script>
+  (() => {
+    const PLAY_SVG  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+    const PAUSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+
+    const fmt = s => (!isFinite(s) ? '--:--' : 
+      Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'));
+
+    let currentAPI = null;
+
+    document.querySelectorAll('.audio-card').forEach(card => {
+      const src = card.getAttribute('data-src');
+      if (!src) return;
+
+      const player   = card.querySelector('[data-audio]');
+      const btn      = player.querySelector('[data-play]');
+      const timeline = player.querySelector('[data-timeline]');
+      const progress = player.querySelector('[data-progress]');
+      const thumb    = player.querySelector('[data-thumb]');
+      const curEl    = player.querySelector('[data-current]');
+      const totEl    = player.querySelector('[data-total]');
+
+      const audio = new Audio(src);
+      audio.preload = 'metadata';
+
+      const setBtnPlay  = () => { btn.setAttribute('aria-pressed','false'); btn.setAttribute('aria-label','Play');  btn.innerHTML = PLAY_SVG; };
+      const setBtnPause = () => { btn.setAttribute('aria-pressed','true');  btn.setAttribute('aria-label','Pause'); btn.innerHTML = PAUSE_SVG; };
+
+      audio.addEventListener('loadedmetadata', () => {
+        totEl.textContent = fmt(audio.duration);
+        timeline.setAttribute('aria-valuemax', Math.floor(audio.duration || 0));
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        const d = audio.duration || 0, t = audio.currentTime || 0;
+        const pct = d ? (t/d)*100 : 0;
+        curEl.textContent = fmt(t);
+        progress.style.width = pct + '%';
+        thumb.style.left = pct + '%';
+        timeline.setAttribute('aria-valuenow', Math.floor(t));
+      });
+
+      audio.addEventListener('ended', () => {
+        audio.currentTime = 0;
+        setBtnPlay();
+      });
+
+      const api = {
+        pause(){ audio.pause(); setBtnPlay(); },
+        play(){
+          if (currentAPI && currentAPI !== api) currentAPI.pause();
+          audio.play();
+          setBtnPause();
+          currentAPI = api;
+        }
+      };
+
+      btn.addEventListener('click', () => {
+        if (audio.paused) api.play(); else api.pause();
+      });
+
+      // pointer scrubbing
+      let dragging = false;
+      const seekTo = (clientX) => {
+        const rect = timeline.getBoundingClientRect();
+        let r = (clientX - rect.left) / rect.width;
+        r = Math.max(0, Math.min(1, r));
+        if (isFinite(audio.duration)) audio.currentTime = r * audio.duration;
+      };
+      timeline.addEventListener('pointerdown', e => {
+        dragging = true;
+        timeline.setPointerCapture(e.pointerId);
+        seekTo(e.clientX);
+      });
+      timeline.addEventListener('pointermove', e => { if (dragging) seekTo(e.clientX); });
+      timeline.addEventListener('pointerup',   e => { dragging = false; timeline.releasePointerCapture?.(e.pointerId); });
+
+      // keyboard seeking on the slider
+      timeline.addEventListener('keydown', e => {
+        if (!isFinite(audio.duration)) return;
+        const step = e.shiftKey ? 10 : 5;
+        if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.currentTime + step, audio.duration); e.preventDefault(); }
+        if (e.key === 'ArrowLeft')  { audio.currentTime = Math.max(audio.currentTime - step, 0);              e.preventDefault(); }
+        if (e.key === 'Home')       { audio.currentTime = 0;                                                  e.preventDefault(); }
+        if (e.key === 'End')        { audio.currentTime = audio.duration;                                     e.preventDefault(); }
+      });
+
+      setBtnPlay();
+    });
+
+    window.addEventListener('pagehide', () => { if (currentAPI) currentAPI.pause(); }, { once:true });
+  })();
+  </script>
 
 </body>
 </html>
