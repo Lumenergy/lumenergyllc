@@ -204,8 +204,9 @@
       .audio-card .time{grid-column:2/3;justify-self:end}
     }
     .audio-card .title-row { margin:0; }
-    .audio-card .title-row h3 { margin:.2rem 0 .4rem; }  /* 0.4rem below title */
-    .audio-card .title-row + .muted { margin:0; }        /* kill default P margins */
+    .audio-card .title-row h3 { margin:.2rem 0 .6rem; }           
+    .audio-card .title-row + .muted { margin:0 0 .6rem 0; }         
+    .audio-card .title-row + .muted + .muted { margin-top:0 !important; } 
 
   </style>
 </head>
