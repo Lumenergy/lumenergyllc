@@ -65,16 +65,16 @@
     gap:.5rem;
   }
 
-  /* Center multi-line nav labels on mobile */
+  /* Center nav labels on mobile */
   .nav-links a{
     font-size:.9rem;
     letter-spacing:.3px;
     margin-left:0;
     padding:.25rem .4rem;
     display:inline-block;
-    text-align:center;   /* centers wrapped lines */
-    white-space:normal;  /* allow wrapping */
-    line-height:1.25;    /* nicer multi-line spacing */
+    text-align:center;  
+    white-space:normal; 
+    line-height:1.25;
   }
 }
 
@@ -128,11 +128,8 @@
       Founded in 2025, Lumenergy LLC offers independent support for nonprofits and non-governmental organizations
       focused on climate and energy policy in California.
     </p>
-    <!-- Button now goes to the Contact page -->
     <a class="cta" href="/contact/">Get in Touch</a>
   </header>
-
-  <!-- No additional sections -->
 
   <footer class="container">
     
@@ -163,7 +160,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Auto-glow current page in nav (won't highlight on home, but keeps consistency site-wide)
     (function() {
       var current = location.pathname.replace(/\/index\.html$/,'').toLowerCase();
       document.querySelectorAll('.nav-links a[href]').forEach(function(a){
