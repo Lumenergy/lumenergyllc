@@ -70,19 +70,18 @@
     gap:.5rem;
   }
 
-  /* Center multi-line nav labels on mobile */
+  /* Center nav on mobile */
   .nav-links a{
     font-size:.9rem;
     letter-spacing:.3px;
     margin-left:0;
     padding:.25rem .4rem;
     display:inline-block;
-    text-align:center;   /* centers wrapped lines */
-    white-space:normal;  /* allow wrapping */
-    line-height:1.25;    /* nicer multi-line spacing */
+    text-align:center;  
+    white-space:normal; 
+    line-height:1.25; 
   }
 }
-
 
     /* Header */
     header.page-header { padding: 1.5rem 0 1.5rem; text-align:center; }
@@ -92,7 +91,7 @@
     }
     .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
 
-    /* Grid + Cards */
+    /* Grid and Cards */
     .grid{ display:grid; gap:1.2rem; margin-bottom:2.5rem; }
     .card{
       position:relative;
@@ -111,7 +110,7 @@
         0 0 60px rgba(250,204,21,.15);
     }
 
-/* --- Contact form styles --- */
+/* Contact form styles */
    
     .form-field input,
     .form-field textarea{
@@ -131,11 +130,10 @@
 
     .form-field label{
       display:block;
-      margin:.45rem 0 .35rem; /* add tiny space above each label */
+      margin:.45rem 0 .35rem;
       font-weight:600;
     }
 
-/* don't add extra top gap on the very first row of the 2-column grid */
 .form-grid.two .form-field:nth-child(-n+2) label{
   margin-top:0;
 }
@@ -169,7 +167,7 @@
       border:1px solid rgba(192,132,252,.35);
       border-radius:14px;
       padding:.85rem 1.25rem;
-      font-family: 'Raleway', sans-serif; /* <- make it Raleway */
+      font-family: 'Raleway', sans-serif;
       font-weight:600;
       letter-spacing:.2px;
       cursor:pointer;
@@ -251,11 +249,11 @@
         <textarea id="message" name="message" rows="6" required placeholder="How can we help?"></textarea>
       </div>
 
-      <!-- Honeypot for spam bots -->
+      <!-- Honeypot for spam -->
       <input type="text" name="_gotcha" style="display:none">
 
-      <!-- Subject shown in your inbox -->
-      <input type="hidden" name="_subject" value="New message from Lumenergy LLC contact form">
+   
+      <input type="hidden" name="_subject" value="New message from website contact form">
 
       <button type="submit" class="button-glow">Send Message</button>
       <p id="form-status" class="muted" role="status" aria-live="polite"></p>
@@ -288,7 +286,7 @@
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
-<!-- Auto-glow script -->
+<!-- auto glow script -->
 <script>
 (function(){
   var current = location.pathname.replace(/\/index\.html$/,'').toLowerCase();
