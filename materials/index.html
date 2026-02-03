@@ -35,7 +35,7 @@
     a{ color:var(--pearl); text-decoration:none; }
     .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
 
-    /* Nav (match your site) */
+    /* Nav */
     .nav{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(6px) saturate(140%);
@@ -55,8 +55,6 @@
       text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
       outline:none;
     }
-
-/* Glow the current page link */
 .nav a[aria-current="page"]{
   color: var(--glow);
   opacity: 1;
@@ -79,7 +77,7 @@
     gap:.5rem;
   }
 
-  /* Center multi-line nav labels on mobile */
+  /* center nav on mobile */
   .nav-links a{
     font-size:.9rem;
     letter-spacing:.3px;
@@ -106,7 +104,7 @@
     .grid {
       display: grid;
       gap: 1.2rem;
-      margin-bottom: 2.5rem; /* space before footer */
+      margin-bottom: 2.5rem;
     }
     @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
     @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
@@ -140,10 +138,10 @@
       margin: 0.5rem 0 0.75rem;
   </style>
 
-  <!-- Preload first audio for snappier start -->
+  <!-- preloads audio -->
   <link rel="preload" as="audio" href="/materials/mp3/KNXNews2025.mp3" type="audio/mpeg">
 
-  <!-- Audio card CSS (additive; does not modify existing rules) -->
+  <!-- audio card CSS -->
   <style>
     .audio-card .audio-player{
       display:grid;
@@ -234,7 +232,7 @@
 
   <main class="container">
     
-<!-- add files and links here -->
+<!-- NEW FILES AND LINKS GO HERE -->
     
   <section class="grid cols-2" aria-label="Materials list">
 
@@ -265,7 +263,7 @@
         </p>
       </article>
     
-    <!-- Reuse down to article card for more audio clips -->
+    <!-- FOR AUDIO CLIPS : reuse from here down to next comment -->
     <article class="card audio-card" data-src="/materials/mp3/KNXNews2025.mp3">
         <div class="title-row">
         <h3>Audio: How Battery Storage Has Improved California's Grid Reliability</h3>
@@ -298,7 +296,7 @@
   </noscript>
 </article>
 
-
+<!-- FOR AUDIO CLIPS: up to here -->
       
       <article class="card">
         <h3>Article: "California invests big in battery energy storage — and leaves rolling blackouts behind"</h3>
@@ -421,7 +419,7 @@
   })();
   </script>
 
-  <!-- Reusable audio player script (auto-wires every .audio-card; supports multiple clips) -->
+  <!-- audio player script -->
   <script>
   (() => {
     const PLAY_SVG  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
